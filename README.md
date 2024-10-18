@@ -9,7 +9,7 @@ GoAi is a Go CLI tool to query different Large Language Models (LLMs).
 
 ## Installation Instructions
 
-1. Clone the repository:
+1. Clone the repository
 
 2. Install dependencies:
    ```
