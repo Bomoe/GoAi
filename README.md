@@ -1,4 +1,3 @@
-```markdown
 # GoAi
 
 GoAi is a Go CLI tool to query different Language Learning Models (LLMs).
@@ -71,4 +70,3 @@ To update the tool to the latest version:
    git pull origin main
    ```
 3. Repeat steps 2-5 from the Installation Instructions
-```
