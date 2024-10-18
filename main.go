@@ -37,39 +37,40 @@ type Message struct {
 }
 
 func main() {
-    if len(os.Args) < 2 {
-        log.Fatal("Usage: goai \"your query here\"")
-    }
+	if len(os.Args) < 2 {
+		log.Fatal("Usage: goai \"your query here\"")
+	}
 
-    query := strings.Join(os.Args[1:], " ")
-    client := &http.Client{}
+	query := strings.Join(os.Args[1:], " ")
+	client := &http.Client{}
 
-    resp, err := sendOpenAiReq("gpt-4o-mini", query, client)
-    if err != nil {
-        log.Fatalln(err)
-    }
+	resp, err := sendOpenAiReq("gpt-4o-mini", query, client)
+	if err != nil {
+		log.Fatalln(err)
+	}
 
-    fmt.Println(resp)
+	fmt.Println(resp)
 }
 
 func goDotEnvVariable(key string) (string, error) {
-    home, err := os.UserHomeDir()
-    if err != nil {
-        return "", err
-    }
-    err = godotenv.Load(filepath.Join(home, ".goai.env"))
-    if err != nil {
-        return "", errors.New("Error loading .env file")
-    }
-    return os.Getenv(key), nil
+	home, err := os.UserHomeDir()
+	if err != nil {
+		return "", err
+	}
+	err = godotenv.Load(filepath.Join(home, ".goai.env"))
+	if err != nil {
+		return "", errors.New("Error loading .env file")
+	}
+	return os.Getenv(key), nil
 }
 
 func sendOpenAiReq(model, query string, client *http.Client) (msg string, err error) {
-	var allowedModels= []string{"gpt-4o-mini"}
+	var allowedModels = []string{"gpt-4o-mini"}
 	var isModelAllowed = false
-	for _, v := range(allowedModels) {
+	for _, v := range allowedModels {
 		if v == model {
 			isModelAllowed = true
+			break
 		}
 	}
 	if !isModelAllowed {
