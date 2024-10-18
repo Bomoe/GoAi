@@ -1,7 +1,6 @@
-```markdown
 # GoAi
 
-GoAi is a Go CLI tool to query different Language Learning Models (LLMs).
+GoAi is a Go CLI tool to query different Large Language Models (LLMs).
 
 ## Prerequisites
 
@@ -10,11 +9,7 @@ GoAi is a Go CLI tool to query different Language Learning Models (LLMs).
 
 ## Installation Instructions
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/GoAi.git
-   cd GoAi
-   ```
+1. Clone the repository
 
 2. Install dependencies:
    ```
@@ -57,7 +52,7 @@ goai "What is the capital of France?"
 
 ## Troubleshooting
 
-- If you encounter permission issues, ensure your API key is correct in `~/.goai.env`
+- If you encounter permission issues, ensure your OpenAI API key is correct in `~/.goai.env`
 - Make sure `/usr/local/bin` is in your PATH
 - If the command is not found, try restarting your terminal or running `source ~/.bashrc` (or equivalent for your shell)
 
@@ -71,4 +66,3 @@ To update the tool to the latest version:
    git pull origin main
    ```
 3. Repeat steps 2-5 from the Installation Instructions
-```
